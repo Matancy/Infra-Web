@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h1>TU VAS LA FERMER TA GUEULE MATEO</h1>
+    <h1>RINOSHIELD</h1>
     <p>Bienvenue sur le monde de MICKEY</p>
     
 </body>
