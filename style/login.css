@@ -72,7 +72,7 @@ form button:hover i {
     margin-left: 8px;
 }
 
-input[type="email"], input[type="password"] {
+input[type="email"], input[type="password"], input[type="text"] {
     font-size: 1rem;
     padding: 6px;
 }

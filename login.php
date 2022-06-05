@@ -11,10 +11,10 @@
 
         $result = $bdd->prepare($sql);
         $result->execute();
-
+    
         if($result->rowCount() > 0) {
             $data = $result->fetchAll();
-            if(password_verify($pass, $data[0]["password"])) {
+            if(password_verify($password, $data[0]["password"])) {
                 // Connection OK to the account
                 $_SESSION['id'] = $data[0]['id'];
                 $_SESSION['email'] = $data[0]['email'];
@@ -43,13 +43,18 @@
 </head>
 <body>
     <form action="login.php" method="post">
+        <?php 
+            if(isset($_SESSION['id'])) {
+                echo "Connected as " . $_SESSION['name'];
+            }
+        ?>
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
         <h1>Login</h1>
         <hr>
         <input type="email" name="email" id="email" placeholder="will@gmail.com" require>
         <input type="password" name="password" id="password" placeholder="myLittlePwd" require>
         <button type="submit" name="submit">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
-        <p>Not register yet ? register now <a href="#">here</a></p>
+        <p>Not register yet ? register now <a href="register.php">here</a></p>
     </form>
 </body>
 </html>
