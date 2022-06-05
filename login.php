@@ -1,3 +1,35 @@
+<?php 
+    session_start(); // Start session
+    include 'php/database.php'; // Include database connection
+
+    if(isset($_POST['submit'])) {
+        $email = $_POST['email'];
+        $password = $_POST['password'];
+        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+        $sql = "SELECT * FROM users WHERE email = '$email' ";
+
+        $result = $bdd->prepare($sql);
+        $result->execute();
+
+        if($result->rowCount() > 0) {
+            $data = $result->fetchAll();
+            if(password_verify($pass, $data[0]["password"])) {
+                // Connection OK to the account
+                $_SESSION['id'] = $data[0]['id'];
+                $_SESSION['email'] = $data[0]['email'];
+                $_SESSION['name'] = $data[0]['name'];
+                $_SESSION['created_at'] = $data[0]['created_at'];
+            } else {
+                // Password incorrects
+                echo "<script>alert('Mot de passe incorrect');</script>";
+            }
+        } else {
+            // User not found
+            echo "<script>alert('Utilisateur inconnu');</script>";
+        }
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +42,7 @@
     <script src="https://kit.fontawesome.com/d50a18be62.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <form action="login.php" methode="POST">
+    <form action="login.php" method="post">
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
         <h1>Login</h1>
         <hr>
