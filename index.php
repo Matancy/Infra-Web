@@ -14,21 +14,37 @@
 
 
 
-    <title>ASAN, to discover the incredible</title>
+    <title>ASAN, to discover the univers</title>
 </head>
 <body class="accueil" title="Photo de Casey Horner, de unsplash.com">
     <header>
         <nav class="nav">
-            <ul class="menu">
-                <li class="navbar_link"><a href="index.html">Welcome</a></li>
-                <li class="navbar_link"><a href="">Private</a></li>
+            <ul class="home">
+                <li>
+                    <a href="index.php"><img class="logo" src="assets/ico/logo_nasa.png" alt="Logo" title="Image made by Pixel Perfect from www.flaticon.com"></a>
+                </li>
+                <li>
+                    <a href="">Login/Register</a>
+                </li>
             </ul>
         </nav>
     </header>
     <main>
         <div class="introduction">
             <h1>ASAN</h1>
-            <h2>To discover the incredible</h2>
+            <h2>To discover the univers</h2>
+            
+            <!-- Compteur de la durée du voyage de la sonde Voyageur 1 -->
+            <?php
+            function Duree($date_naissance)
+            {
+                $am = explode('/', $date_naissance);
+                $an = explode('/', date('d/m/Y'));
+                if(($am[1] < $an[1]) || (($am[1] == $an[1]) && ($am[0] <= $an[0]))) return $an[2] - $am[2];
+                return $an[2] - $am[2] - 1;
+            }
+            echo "<p class="texte_voyageur1">The Voyageur spacecraft 1 left since <span class="duree_voyage_voyageur1"><br>"+Duree("05/09/1977")+"</span>";
+            ?>
         </div>
 
         <div class="rubriques">
@@ -52,7 +68,7 @@
         </div>
     </main>
     <footer>
-        <p>NASA - 2022 - Legal notice</p>
+        <p>ASAN - 2022 - <a href="">Legal notice</a></p> 
     </footer>
 </body>
 </html>
