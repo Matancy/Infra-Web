@@ -39,7 +39,7 @@
                 $depart = "15-06-1995";
                 $aujourdhui = date("Y-m-d");
                 $diff = date_diff(date_create($depart), date_create($aujourdhui));
-                echo 'The Voyageur spacecraft 1 left the earth for '.$diff->format('%y')+'years';
+                echo 'The Voyageur spacecraft 1 left the earth for '.$diff->format('%y') . 'years';
             ?>
             
         </div>
