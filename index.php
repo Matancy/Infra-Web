@@ -23,8 +23,8 @@
                 <li>
                     <a href="index.php"><img class="logo" src="assets/ico/logo_nasa.png" alt="Logo" title="Image made by Pixel Perfect from www.flaticon.com"></a>
                 </li>
-                <li>
-                    <a href="">Login/Register</a>
+                <li class="list_element">
+                    <a class="link_list_element" href="">Login/Register</a>
                 </li>
             </ul>
         </nav>
@@ -39,7 +39,7 @@
                 $depart = "15-06-1995";
                 $aujourdhui = date("Y-m-d");
                 $diff = date_diff(date_create($depart), date_create($aujourdhui));
-                echo 'The Voyageur spacecraft 1 left the earth for '.$diff->format('%y') . 'years';
+                echo '<p class="texte_voyageur1">The Voyageur spacecraft 1 left the earth for <br><span class="duree_voyage_voyageur1">'.$diff->format('%y') . 'years</span>' . '</p>';
             ?>
             
         </div>
