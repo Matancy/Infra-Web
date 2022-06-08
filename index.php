@@ -43,7 +43,7 @@
                 if(($am[1] < $an[1]) || (($am[1] == $an[1]) && ($am[0] <= $an[0]))) return $an[2] - $am[2];
                 return $an[2] - $am[2] - 1;
             }
-            echo "<p class="texte_voyageur1">The Voyageur spacecraft 1 left since <span class="duree_voyage_voyageur1"><br>"+Duree("05/09/1977")+"</span>";
+            echo "<p class='texte_voyageur1'>The Voyageur spacecraft 1 left since <span class='duree_voyage_voyageur1'><br>"+Duree('05/09/1977')+"</span>";
             ?>
         </div>
 
