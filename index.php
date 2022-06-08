@@ -60,7 +60,7 @@
                                 $depart = "15-06-1995";
                                 $aujourdhui = date("Y-m-d");
                                 $diff = date_diff(date_create($depart), date_create($aujourdhui));
-                                echo '<span class="duree_voyage_voyageur1">'.$diff->format('%y') . 'years</span>';
+                                echo $diff->format('%y') . 'years';
                             ?> 
                         </h1>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quis minus libero! Laborum quo, saepe culpa, asperiores voluptates at facilis voluptate iusto nostrum consequatur tenetur iure labore a fugit temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, non sequi, minus, velit accusantium illum laboriosam repellendus voluptatum repellat necessitatibus commodi quasi animi? Incidunt praesentium ex ipsum tenetur! Consequatur, aperiam. lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo laborum blanditiis repellat quo. Quis, eveniet. Perferendis rerum a repellendus blanditiis nihil</p>
