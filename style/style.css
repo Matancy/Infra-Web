@@ -78,7 +78,7 @@ PAGE ACCUEIL
 INTRODUCTION DE LA PAGE D ACCUEIL
 *********************************/
 .introduction{
-    margin-top: 10em;
+    margin-top: 15em;
     min-height: 100vh;
     text-align: center;
     color: #F5F5F5;
@@ -91,18 +91,6 @@ INTRODUCTION DE LA PAGE D ACCUEIL
     font-size: 50px;
 }
 
-/* Voyageur spacecraft 1 */
-.voyageur_spacecraft{
-    min-height: 100vh;
-}
-.texte_voyageur1{
-    font-size: 50px;
-}
-.duree_voyage_voyageur1{
-    font-size: 50px;
-    color: red;
-    font-weight:900;
-}
 
 
 
@@ -156,6 +144,17 @@ INTRODUCTION DE LA PAGE D ACCUEIL
     justify-content: center;
     width: 30%;
 }
+/* Voyageur spacecraft 1 */
+.image_voyageur{
+    width: 100%;
+    border-radius: 32px;
+}
+
+.duree_voyage_voyageur1{
+    font-size: 50px;
+    color: red;
+    font-weight:900;
+}
 
 
 
@@ -176,4 +175,3 @@ footer a{
     color: #F5F5F5;
     font-size: 20px;
 }
-
