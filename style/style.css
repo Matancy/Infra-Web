@@ -68,9 +68,11 @@ PAGE ACCUEIL
     top: 2.2em;
 }
 
+
 .navbar_link a{
     color: #F5F5F5;
 }
+
 
 /*********************************
 INTRODUCTION DE LA PAGE D ACCUEIL
@@ -150,6 +152,10 @@ INTRODUCTION DE LA PAGE D ACCUEIL
     justify-content: center;
     width: 30%;
 }
+
+
+
+
 
 footer{
     display: flex;

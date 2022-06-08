@@ -23,8 +23,8 @@
                 <li>
                     <a href="index.php"><img class="logo" src="assets/ico/logo_nasa.png" alt="Logo" title="Image made by Pixel Perfect from www.flaticon.com"></a>
                 </li>
-                <li>
-                    <a href="">Login/Register</a>
+                <li class="list_element">
+                    <a class="link_list_element" href="">Login/Register</a>
                 </li>
             </ul>
         </nav>
@@ -36,14 +36,10 @@
             
             <!-- Compteur de la durée du voyage de la sonde Voyageur 1 -->
             <?php
-            function Duree($date_naissance)
-            {
-                $am = explode('/', $date_naissance);
-                $an = explode('/', date('d/m/Y'));
-                if(($am[1] < $an[1]) || (($am[1] == $an[1]) && ($am[0] <= $an[0]))) return $an[2] - $am[2];
-                return $an[2] - $am[2] - 1;
-            }
-            echo "<p class="texte_voyageur1">The Voyageur spacecraft 1 left since <span class="duree_voyage_voyageur1"><br>"+Duree("05/09/1977")+"</span>";
+                $depart = "15-06-1995";
+                $aujourdhui = date("Y-m-d");
+                $diff = date_diff(date_create($depart), date_create($aujourdhui));
+                echo '<p class="texte_voyageur1">The Voyageur spacecraft 1 left the earth for <br><span class="duree_voyage_voyageur1">'.$diff->format('%y') . 'years</span>' . '</p>';
             ?>
         </div>
 
