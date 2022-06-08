@@ -33,17 +33,13 @@
         <div class="introduction">
             <h1>ASAN</h1>
             <h2>To discover the univers</h2>
+        </div>
             
             <!-- Compteur de la durée du voyage de la sonde Voyageur 1 -->
-            <?php
-                $depart = "15-06-1995";
-                $aujourdhui = date("Y-m-d");
-                $diff = date_diff(date_create($depart), date_create($aujourdhui));
-                echo '<p class="texte_voyageur1">The Voyageur spacecraft 1 left the earth for <br><span class="duree_voyage_voyageur1">'.$diff->format('%y') . 'years</span>' . '</p>';
-            ?>
-        </div>
+                
 
         <div class="rubriques">
+            
             <div class="contenu_rubriques">
                 <figure class="conteneur_image_rubrique">
                     <img class="image_histoire" src="assets/img/image_histoire.jpg" alt="" title="Photo de History in HD de unsplash.com">
@@ -52,6 +48,23 @@
                     <h1>History</h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quis minus libero! Laborum quo, saepe culpa, asperiores voluptates at facilis voluptate iusto nostrum consequatur tenetur iure labore a fugit temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, non sequi, minus, velit accusantium illum laboriosam repellendus voluptatum repellat necessitatibus commodi quasi animi? Incidunt praesentium ex ipsum tenetur! Consequatur, aperiam. lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo laborum blanditiis repellat quo. Quis, eveniet. Perferendis rerum a repellendus blanditiis nihil</p>
                 </article>
+            </div>
+
+            <div class="contenu_rubriques">
+                    <figure class="conteneur_image_rubrique">
+                        <img class="image_voyageur" src="assets/img/voyageur.jpg" alt="Engin spacial qui décolle" title="Photo de SpaceX, de unsplash.com">
+                    </figure>
+                    <article class="texte_rubriques">
+                        <h1>The voyager spacecraft left the earth from<br>
+                            <?php
+                                $depart = "15-06-1995";
+                                $aujourdhui = date("Y-m-d");
+                                $diff = date_diff(date_create($depart), date_create($aujourdhui));
+                                echo '<span class="duree_voyage_voyageur1">'.$diff->format('%y') . 'years</span>';
+                            ?> 
+                        </h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quis minus libero! Laborum quo, saepe culpa, asperiores voluptates at facilis voluptate iusto nostrum consequatur tenetur iure labore a fugit temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, non sequi, minus, velit accusantium illum laboriosam repellendus voluptatum repellat necessitatibus commodi quasi animi? Incidunt praesentium ex ipsum tenetur! Consequatur, aperiam. lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo laborum blanditiis repellat quo. Quis, eveniet. Perferendis rerum a repellendus blanditiis nihil</p>
+                    </article>
             </div>
     
             <div class="contenu_rubriques">
