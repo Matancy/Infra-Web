@@ -36,15 +36,12 @@
             
             <!-- Compteur de la durée du voyage de la sonde Voyageur 1 -->
             <?php
-            function Duree($date_naissance)
-            {
-                $am = explode('/', $date_naissance);
-                $an = explode('/', date('d/m/Y'));
-                if(($am[1] < $an[1]) || (($am[1] == $an[1]) && ($am[0] <= $an[0]))) return $an[2] - $am[2];
-                return $an[2] - $am[2] - 1;
-            }
-            echo "<p class='texte_voyageur1'>The Voyageur spacecraft 1 left since <span class='duree_voyage_voyageur1'><br>"+Duree(05/09/1977)+"</span>";
+                $depart = "15-06-1995";
+                $aujourdhui = date("Y-m-d");
+                $diff = date_diff(date_create($depart), date_create($aujourdhui));
+                echo 'The Voyageur spacecraft 1 left the earth for '.$diff->format('%y')+'years';
             ?>
+            
         </div>
 
         <div class="rubriques">
