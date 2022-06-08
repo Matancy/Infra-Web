@@ -91,6 +91,10 @@ INTRODUCTION DE LA PAGE D ACCUEIL
     font-size: 50px;
 }
 
+/* Voyageur spacecraft 1 */
+.voyageur_spacecraft{
+    min-height: 100vh;
+}
 .texte_voyageur1{
     font-size: 50px;
 }
