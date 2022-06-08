@@ -1,0 +1,169 @@
+*{
+    box-sizing:border-box; 
+    outline:none;
+    margin: 0;
+    padding:0;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+
+
+a:link{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+
+
+/********************
+PAGE ACCUEIL
+********************/
+/* Menu de navigation */
+.accueil{
+    background-image: url(../assets/img/image_intro_accueil.jpg); /* Photo de Casey Horner, de unsplash.com */
+    background-size: 100%;
+}
+.nav{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: transparent;
+}
+
+.logo{
+    width: 100px;
+    margin-right: 2rem;
+}
+
+
+.home{
+    width: 100%;
+    padding-top: 1em;
+    padding-left: 1em;
+    font-size: 30px;
+    left: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+}
+
+.home a{
+    color: #F5F5F5;
+    margin: auto;
+}
+
+.home li{
+    width: 7%;
+    color: #F5F5F5;
+    display: flex;
+}
+
+.login_register{
+    position: absolute;
+    right: 6.7rem;
+    top: 2.2em;
+}
+
+.navbar_link a{
+    color: #F5F5F5;
+}
+
+/*********************************
+INTRODUCTION DE LA PAGE D ACCUEIL
+*********************************/
+.introduction{
+    margin-top: 10em;
+    min-height: 100vh;
+    text-align: center;
+    color: #F5F5F5;
+}
+
+.introduction h1{
+    font-size: 210px;
+}
+.introduction h2{
+    font-size: 50px;
+}
+
+.texte_voyageur1{
+    font-size: 50px;
+}
+.duree_voyage_voyageur1{
+    font-size: 50px;
+    color: red;
+    font-weight:900;
+}
+
+
+
+
+/* Rubriques */
+.rubriques{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenu_rubriques{
+    margin-bottom: 10em;
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    text-align: center;
+    background-color: transparent;
+    background-color: rgba(168, 168, 168, 0.5);
+    border-radius: 32px;
+    padding: 1em;
+}
+.texte_rubriques{
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    width: 70%;
+    margin-left: 1em;
+}
+
+.contenu_rubriques h1{
+    font-size: 60px;
+}
+.contenu_rubriques p{
+    font-size: 30px;
+    text-align: left;
+}
+
+.image_histoire{
+    width: 100%;
+    border-radius: 32px;
+}
+
+.image_missions{
+    width: 30%;
+    border-radius: 32px;
+}
+.conteneur_image_rubrique{
+    display: flex;
+    justify-content: center;
+    width: 30%;
+}
+
+footer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 2em;
+    color: #F5F5F5;
+    font-size: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer a{
+    color: #F5F5F5;
+    font-size: 20px;
+}
+
