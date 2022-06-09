@@ -25,7 +25,7 @@ if (isset($_POST['reset-counter'])) {
     } ?>
 
     <form action="post">
-        <input type="button" name="reset-counter" value="Réinitialiser le compteur">
+        <input type="button" class="btn" name="reset-counter" value="Réinitialiser le compteur">
     </form>
 </body>
 
