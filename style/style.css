@@ -183,3 +183,10 @@ footer a{
 .background_admin {
     background-color: #34495e;
 }
+.admin-hub {
+    display: flex;
+    justify-content: center;
+}
+.admin-hub-icon {
+    width: 100px;
+}
