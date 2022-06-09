@@ -17,15 +17,15 @@ if (isset($_POST['reset-counter'])) {
     <title>Admin section</title>
 </head>
 
-<body class="background_admin">
+<body class="background-admin">
     <h1>Réglage du compteur</h1>
 
     <?php if ($message != null) {
         echo "<h3>$message</h3>";
     } ?>
 
-    <form action="post">
-        <input type="button" name="reset-counter" value="Réinitialiser le compteur">
+    <form action="post" style="display: flex; justify-content: center;">
+        <input type="button" class="btn" name="reset-counter" value="Réinitialiser le compteur">
     </form>
 </body>
 
