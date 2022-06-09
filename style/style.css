@@ -184,6 +184,10 @@ footer a{
     background-color: #34495e;
     color: white;
 }
+.background-admin h1 {
+    padding: 4rem;
+    text-align: center;
+}
 .background-admin a {
     color: white;
 }
