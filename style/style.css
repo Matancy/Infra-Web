@@ -176,3 +176,10 @@ footer a{
     color: #F5F5F5;
     font-size: 20px;
 }
+
+/**
+* Page admin
+**/
+.background_admin {
+    background-color: #34495e;
+}
