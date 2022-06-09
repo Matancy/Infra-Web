@@ -10,7 +10,7 @@
     <title>Admin section</title>
 </head>
 
-<body class="background_admin">
+<body class="background-admin">
     <div class="admin-hub">
         <a class="admin-hub-icon" href="counter.php">
             <img src="../assets/ico/counter.png" alt="Icône de compteur">
