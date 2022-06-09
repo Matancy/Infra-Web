@@ -161,6 +161,7 @@ footer a{
 **/
 .background_admin {
     background-color: #34495e;
+    color: white;
 }
 .admin-hub {
     display: flex;
@@ -168,4 +169,6 @@ footer a{
 }
 .admin-hub-icon {
     width: 100px;
+    padding: 5rem;
+    text-align: center;
 }
