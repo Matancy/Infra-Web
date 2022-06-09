@@ -24,7 +24,7 @@ if (isset($_POST['reset-counter'])) {
         echo "<h3>$message</h3>";
     } ?>
 
-    <form action="post">
+    <form action="post" style="display: flex; justify-content: center;">
         <input type="button" class="btn" name="reset-counter" value="Réinitialiser le compteur">
     </form>
 </body>
