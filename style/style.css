@@ -1,30 +1,9 @@
-*{
-    box-sizing:border-box; 
-    outline:none;
-    margin: 0;
-    padding:0;
-}
-
-body{
-    font-family: 'Raleway', sans-serif;
-}
-
-
-
-a:link{
-    text-decoration: none;
-}
-ul{
-    list-style-type: none;
-}
-
-
 /********************
 PAGE ACCUEIL
 ********************/
 /* Menu de navigation */
 .accueil{
-    background-image: url(../assets/img/image_intro_accueil.jpg); /* Photo de Casey Horner, de unsplash.com */
+    background-image: url('../assets/img/image_intro_accueil.jpg'); /* Photo de Casey Horner, de unsplash.com */
     background-size: 100%;
 }
 .nav{
