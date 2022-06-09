@@ -17,7 +17,7 @@ if (isset($_POST['reset-counter'])) {
     <title>Admin section</title>
 </head>
 
-<body class="background_admin">
+<body class="background-admin">
     <h1>Réglage du compteur</h1>
 
     <?php if ($message != null) {

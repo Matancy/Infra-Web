@@ -180,8 +180,11 @@ footer a{
 /**
 * Page admin
 **/
-.background_admin {
+.background-admin {
     background-color: #34495e;
+    color: white;
+}
+.background-admin a {
     color: white;
 }
 .admin-hub {
