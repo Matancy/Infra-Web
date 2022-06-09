@@ -46,6 +46,7 @@
     <script src="https://kit.fontawesome.com/d50a18be62.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php include('php/navBar.php') ?>
     <form action="register.php" method="post">
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
         <h1>Register</h1>

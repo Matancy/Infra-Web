@@ -18,12 +18,7 @@
 </head>
 <body class="accueil" title="Photo de Casey Horner, de unsplash.com">
     <header>
-        <nav class="nav">
-            <ul class="menu">
-                <li class="navbar_link"><a href="index.html">Welcome</a></li>
-                <li class="navbar_link"><a href="">Private</a></li>
-            </ul>
-        </nav>
+        <?php include('php/navBar.php') ?>
     </header>
     <main>
         <div class="introduction">

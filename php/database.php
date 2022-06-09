@@ -1,4 +1,5 @@
 <?php 
+    session_start(); // Start session
     $servername = "localhost"; // Adress Bdd
     $user = "root"; // userName Bdd
     $pass = ""; // Password Bdd

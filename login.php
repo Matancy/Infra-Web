@@ -1,5 +1,4 @@
 <?php 
-    session_start(); // Start session
     include 'php/database.php'; // Include database connection
 
     if(isset($_POST['submit'])) {
@@ -42,6 +41,7 @@
     <script src="https://kit.fontawesome.com/d50a18be62.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php include('php/navBar.php') ?>
     <form action="login.php" method="post">
         <?php 
             if(isset($_SESSION['id'])) {
