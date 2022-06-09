@@ -155,3 +155,17 @@ footer a{
     color: #F5F5F5;
     font-size: 20px;
 }
+
+/**
+* Page admin
+**/
+.background_admin {
+    background-color: #34495e;
+}
+.admin-hub {
+    display: flex;
+    justify-content: center;
+}
+.admin-hub-icon {
+    width: 100px;
+}
