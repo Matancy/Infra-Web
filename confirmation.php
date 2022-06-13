@@ -1,19 +1,20 @@
 <?php 
     include('php/database.php');
-    if(isset($_GET["token"])) {
+    if(isset($_GET["token"])&& isset($_GET["id"])) {
 
         $token = htmlspecialchars($_GET["token"]);
+        $id = htmlspecialchars($_GET["id"]);
         
         $statusProcedure = "Account not verified";
         
-        $sql = "SELECT * FROM users WHERE token = '$token';";
+        $sql = "SELECT * FROM users WHERE token = '$token' AND id = '$id';";
         $result = $bdd->prepare($sql);
         $result->execute();
         if($result->rowCount() > 0) {
-            $sql = "UPDATE `users` SET `verified` = '1' WHERE token = '$token';";
+            $sql = "UPDATE `users` SET `verified` = '1' WHERE token = '$token' AND id = '$id';";
             $result = $bdd->prepare($sql);
             $result->execute();
-            $sql = "UPDATE users SET token = -1 WHERE token = '$token';";
+            $sql = "UPDATE users SET token = -1 WHERE token = '$token' AND id = '$id';";
             $result = $bdd->prepare($sql);
             $result->execute();
             $statusProcedure = "Account verified";
