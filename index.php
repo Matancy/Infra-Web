@@ -13,7 +13,7 @@
     <title>ASAN, to discover the univers</title>
 </head>
 
-<body class="accueil" title="Photo de Casey Horner, de unsplash.com">
+<body class="accueil">
     <!-- Navbar -->
     <?php
         include ('php/navBar.php');
