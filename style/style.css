@@ -177,3 +177,31 @@ footer a{
     padding: 5rem;
     text-align: center;
 }
+
+
+/**
+    Confirmation Page
+*/
+
+main#confirmation {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10em;
+    margin-bottom: 10em;
+}
+
+main#confirmation button {
+    border-radius: 8px;
+    margin: 8px ;
+    padding: 12px;
+    background-color: #262626;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer; 
+    background: rgb(9,210,79);
+    background: linear-gradient(21deg, rgba(9,210,79,1) 0%, rgba(0,151,255,1) 100%); 
+}
