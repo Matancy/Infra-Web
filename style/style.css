@@ -112,11 +112,13 @@ INTRODUCTION DE LA PAGE D ACCUEIL
 .image_histoire{
     width: 100%;
     border-radius: 32px;
+    object-fit: cover;
 }
 
 .image_missions{
     width: 30%;
     border-radius: 32px;
+    object-fit: cover;
 }
 .conteneur_image_rubrique{
     display: flex;
@@ -127,6 +129,7 @@ INTRODUCTION DE LA PAGE D ACCUEIL
 .image_voyageur{
     width: 100%;
     border-radius: 32px;
+    object-fit: cover;
 }
 
 .duree_voyage_voyageur1{
@@ -141,7 +144,6 @@ INTRODUCTION DE LA PAGE D ACCUEIL
 
 footer{
     display: flex;
-    width: 100%;
     justify-content: center;
     padding: 2em;
     color: #F5F5F5;

@@ -14,12 +14,16 @@
 </head>
 
 <body class="accueil" title="Photo de Casey Horner, de unsplash.com">
+    <!-- Navbar -->
+    <?php
+        include ('php/navBar.php');
+    ?>
     <header>
         <?php include('php/navBar.php') ?>
     </header>
     <main>
         <div class="introduction">
-            <h1>ASAN</h1>
+            <h1>NASA</h1>
             <h2>To discover the univers</h2>
         </div>
 
