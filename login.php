@@ -21,11 +21,11 @@
                 $_SESSION['created_at'] = $data[0]['created_at'];
             } else {
                 // Password incorrects
-                echo "<script>alert('Mot de passe incorrect');</script>";
+                // echo "<script>alert('Mot de passe incorrect');</script>";
             }
         } else {
             // User not found
-            echo "<script>alert('Utilisateur inconnu');</script>";
+            // echo "<script>alert('Utilisateur inconnu');</script>";
         }
     }
 ?>
@@ -46,7 +46,7 @@
     <form action="login.php" method="post">
         <?php 
             if(isset($_SESSION['id'])) {
-                echo "Connected as " . $_SESSION['name'];
+                // echo "Connected as " . $_SESSION['name'];
             }
         ?>
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
