@@ -15,18 +15,7 @@
 
 <body class="accueil" title="Photo de Casey Horner, de unsplash.com">
     <header>
-        <nav class="nav">
-            <ul class="home">
-                <li>
-                    <a href="index.php"><img class="logo" src="assets/ico/logo_nasa.png" alt="Logo" title="Image made by Pixel Perfect from www.flaticon.com"></a>
-                </li>
-                <li class="list_element">
-                    <a class="link_list_element" href="">Admin</a>
-                    <a class="link_list_element" href="">Login</a>
-                    <a class="link_list_element" href="">Register</a>
-                </li>
-            </ul>
-        </nav>
+        <?php include('php/navBar.php') ?>
     </header>
     <main>
         <div class="introduction">
