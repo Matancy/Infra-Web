@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS nasa.users (
 DROP TABLE IF EXISTS nasa.counters;
 CREATE TABLE IF NOT EXISTS nasa.counters (
   id int(11) NOT NULL AUTO_INCREMENT,
-  name varchar(255) NOT NULL,
   value int(11) NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
