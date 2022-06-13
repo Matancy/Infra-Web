@@ -6,5 +6,6 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(255) NOT NULL,
   `created_at` datetime NOT NULL,
   `verified` tinyint(1) NOT NULL DEFAULT '0',
+  `newsletter` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

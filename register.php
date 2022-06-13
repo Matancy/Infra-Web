@@ -43,9 +43,11 @@
     <title>Nasa - Register</title>
     <link rel="shortcut icon" href="assets/ico/nasa-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/charte-graphique.css">
     <script src="https://kit.fontawesome.com/d50a18be62.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php include('php/navBar.php') ?>
     <form action="register.php" method="post">
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
         <h1>Register</h1>
