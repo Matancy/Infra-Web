@@ -31,7 +31,7 @@
                 //Print it out for example purposes.
                 echo $token;
                 // Request to insert user
-                $sql = "INSERT INTO users (`name`, `email`, `password`, `created_at`, `verified`, `newsletter`, `token`) VALUES ('$name', '$email', '$passwordHash', '$dateNow', 0, 0, '$token')";
+                $sql = "INSERT INTO users (`name`, `email`, `password`, `created_at`, `verified`, `token`) VALUES ('$name', '$email', '$passwordHash', '$dateNow', 0, '$token')";
                 $result = $bdd->prepare($sql);
                 $result->execute();
                 echo "<script>alert('Account created, You need to verifie your account now');</script>";

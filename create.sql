@@ -24,3 +24,5 @@ CREATE TABLE IF NOT EXISTS nasa.newsletter (
   inscription int (11) NOT NULL,
   PRIMARY KEY (id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO nasa.counters (value) VALUES (0);
