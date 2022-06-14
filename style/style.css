@@ -124,7 +124,25 @@ INTRODUCTION DE LA PAGE D ACCUEIL
     display: flex;
     justify-content: center;
     width: 30%;
+} 
+
+.contenu_newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    background-color: transparent;
+    background-color: rgb(232, 232, 232);
+    border-radius: 32px;
+    padding: 1em;
 }
+
+.contenu_newsletter * {
+    padding: 8px;
+}
+
+
 /* Voyageur spacecraft 1 */
 .image_voyageur{
     width: 100%;

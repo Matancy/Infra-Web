@@ -1,29 +1,26 @@
 <?php 
     include('php/database.php');
-    if(isset($_GET["token"])&& isset($_GET["id"])) {
+    if(isset($_GET["token"])&& isset($_SESSION["id"])) {
 
         $token = htmlspecialchars($_GET["token"]);
-        $id = htmlspecialchars($_GET["id"]);
+        $id = htmlspecialchars($_SESSION["id"]);
         
         $statusProcedure = "Account not verified";
-        
-        $sql = "SELECT * FROM users WHERE token = '$token' AND id = '$id';";
-        $result = $bdd->prepare($sql);
-        $result->execute();
+
+        $result = $bdd->prepare("SELECT * FROM users WHERE token = ? AND id = ?;");
+        $result->execute([$token, $id]);
         if($result->rowCount() > 0) {
-            $sql = "UPDATE `users` SET `verified` = '1' WHERE token = '$token' AND id = '$id';";
-            $result = $bdd->prepare($sql);
-            $result->execute();
-            $sql = "UPDATE users SET token = -1 WHERE token = '$token' AND id = '$id';";
-            $result = $bdd->prepare($sql);
-            $result->execute();
+            $result = $bdd->prepare("UPDATE `users` SET `verified` = '1' WHERE token = ? AND id = ?;");
+            $result->execute([$token, $id]);
+            $result = $bdd->prepare("UPDATE users SET token = -1 WHERE token = ? AND id = ?;");
+            $result->execute([$token, $id]);
             $statusProcedure = "Account verified";
             header('Refresh: 5;Location: login.php');
         } else {
             $statusProcedure = "Account not found";
         }
     } else {
-        $statusProcedure = "No token provided";
+        $statusProcedure = "No token provided or you are not logged in";
     }
         
 ?>
