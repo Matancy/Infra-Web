@@ -13,7 +13,7 @@
     <meta name="author" content="Jérémie Lostanlen">
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/charte-graphique.css">
-    <title>ASAN, to discover the univers</title>
+    <title>NASA, to discover the univers</title>
 </head>
 
 <body class="accueil" title="Photo de Casey Horner, de unsplash.com">
@@ -28,6 +28,9 @@
         <div class="introduction">
             <h1>NASA</h1>
             <h2>To discover the univers</h2>
+            <p>Already <?php
+                
+            ?> visitors.</p>
         </div>
 
         <!-- Compteur de la durée du voyage de la sonde Voyageur 1 -->
