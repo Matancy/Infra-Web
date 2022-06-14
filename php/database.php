@@ -1,4 +1,5 @@
 <?php 
+    session_start(); // Start session
     $servername = "localhost"; // Adress Bdd
     $user = "root"; // userName Bdd
     $pass = ""; // Password Bdd
@@ -8,6 +9,6 @@
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     } catch (PDOException $e) {
-        echo "Connection failed: " . $e->getMessage();
+        //echo "Connection failed: " . $e->getMessage();
     }
 ?>

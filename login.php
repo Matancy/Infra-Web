@@ -1,5 +1,4 @@
 <?php 
-    session_start(); // Start session
     include 'php/database.php'; // Include database connection
 
     if(isset($_POST['submit'])) {
@@ -22,11 +21,11 @@
                 $_SESSION['created_at'] = $data[0]['created_at'];
             } else {
                 // Password incorrects
-                echo "<script>alert('Mot de passe incorrect');</script>";
+                // echo "<script>alert('Mot de passe incorrect');</script>";
             }
         } else {
             // User not found
-            echo "<script>alert('Utilisateur inconnu');</script>";
+            // echo "<script>alert('Utilisateur inconnu');</script>";
         }
     }
 ?>
@@ -39,13 +38,15 @@
     <title>Nasa - Login</title>
     <link rel="shortcut icon" href="assets/ico/nasa-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/charte-graphique.css">
     <script src="https://kit.fontawesome.com/d50a18be62.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php include('php/navBar.php') ?>
     <form action="login.php" method="post">
         <?php 
             if(isset($_SESSION['id'])) {
-                echo "Connected as " . $_SESSION['name'];
+                // echo "Connected as " . $_SESSION['name'];
             }
         ?>
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">

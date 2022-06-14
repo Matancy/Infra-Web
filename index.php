@@ -1,3 +1,6 @@
+<?php
+    require './php/database.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,23 +17,16 @@
 </head>
 
 <body class="accueil" title="Photo de Casey Horner, de unsplash.com">
+    <!-- Navbar -->
+    <?php
+        include ('php/navBar.php');
+    ?>
     <header>
-        <nav class="nav">
-            <ul class="home">
-                <li>
-                    <a href="index.php"><img class="logo" src="assets/ico/logo_nasa.png" alt="Logo" title="Image made by Pixel Perfect from www.flaticon.com"></a>
-                </li>
-                <li class="list_element">
-                    <a class="link_list_element" href="">Admin</a>
-                    <a class="link_list_element" href="">Login</a>
-                    <a class="link_list_element" href="">Register</a>
-                </li>
-            </ul>
-        </nav>
+        <?php include('php/navBar.php') ?>
     </header>
     <main>
         <div class="introduction">
-            <h1>ASAN</h1>
+            <h1>NASA</h1>
             <h2>To discover the univers</h2>
         </div>
 

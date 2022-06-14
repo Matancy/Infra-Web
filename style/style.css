@@ -74,7 +74,6 @@ INTRODUCTION DE LA PAGE D ACCUEIL
 
 
 
-
 /* Rubriques */
 .rubriques{
     display: flex;
@@ -113,11 +112,13 @@ INTRODUCTION DE LA PAGE D ACCUEIL
 .image_histoire{
     width: 100%;
     border-radius: 32px;
+    object-fit: cover;
 }
 
 .image_missions{
     width: 30%;
     border-radius: 32px;
+    object-fit: cover;
 }
 .conteneur_image_rubrique{
     display: flex;
@@ -128,6 +129,7 @@ INTRODUCTION DE LA PAGE D ACCUEIL
 .image_voyageur{
     width: 100%;
     border-radius: 32px;
+    object-fit: cover;
 }
 
 .duree_voyage_voyageur1{
@@ -142,7 +144,6 @@ INTRODUCTION DE LA PAGE D ACCUEIL
 
 footer{
     display: flex;
-    width: 100%;
     justify-content: center;
     padding: 2em;
     color: #F5F5F5;
@@ -177,4 +178,32 @@ footer a{
 .admin-hub-icon {
     padding: 5rem;
     text-align: center;
+}
+
+
+/**
+    Confirmation Page
+*/
+
+main#confirmation {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10em;
+    margin-bottom: 10em;
+}
+
+main#confirmation button {
+    border-radius: 8px;
+    margin: 8px ;
+    padding: 12px;
+    background-color: #262626;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    cursor: pointer; 
+    background: rgb(9,210,79);
+    background: linear-gradient(21deg, rgba(9,210,79,1) 0%, rgba(0,151,255,1) 100%); 
 }
