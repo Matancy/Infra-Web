@@ -6,7 +6,7 @@ $message = null;
 if (isset($_POST['reset-counter'])) {
 
     try {
-        $req = $bdd->prepare('UPDATE counter SET value = 0 WHERE id = 1');
+        $req = $bdd->prepare('UPDATE counters SET value = 0 WHERE id = 1');
         $req->execute();
         $message = 'Le compteur a été réinitialisé.';
     } catch (PDOException $e) {
