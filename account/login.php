@@ -1,35 +1,47 @@
-<?php 
-    include 'php/database.php'; // Include database connection
+<?php
+include 'php/database.php'; // Include database connection
 
-    if(isset($_POST['submit'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+$message = null;
 
-        $result = $bdd->prepare("SELECT * FROM users WHERE email = ?;");
-        $result->execute([$email]);
-    
-        if($result->rowCount() > 0) {
-            $data = $result->fetchAll();
-            if(password_verify($password, $data[0]["password"])) {
-                // Connection OK to the account
-                $_SESSION['id'] = $data[0]['id'];
-                $_SESSION['email'] = $data[0]['email'];
-                $_SESSION['name'] = $data[0]['name'];
-                $_SESSION['created_at'] = $data[0]['created_at'];
-                header('Location: area51.php');
-            } else {
-                // Password incorrects
-                // echo "<script>alert('Mot de passe incorrect');</script>";
-            }
+// When the user is already conencted 
+if (!empty($_SESSION['id'])) {
+    $req = $bdd->prepare("SELECT * FROM users WHERE id = ?;");
+    $req->execute([$_SESSION['id']]);
+    $user = $req->fetch();
+
+    $_SESSION['user'] = $user;
+    header('Location: /area51');
+    exit();
+}
+
+if (isset($_POST['submit'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
+    $result = $bdd->prepare("SELECT * FROM users WHERE email = ?;");
+    $result->execute([$email]);
+
+    if ($result->rowCount() > 0) {
+        $data = $result->fetch();
+        if (password_verify($password, $data["password"])) {
+
+            $_SESSION['user'] = $data;
+            header('Location: /area51');
+            exit();
         } else {
-            // User not found
-            // echo "<script>alert('Utilisateur inconnu');</script>";
+            // Password incorrects
+            $message = "Mot de passe incorrect";
         }
+    } else {
+        // User not found
+        $message = "Utilisateur non trouvé";
     }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,15 +52,16 @@
     <link rel="stylesheet" href="style/charte-graphique.css">
     <script src="https://kit.fontawesome.com/d50a18be62.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <?php include('php/navBar.php') ?>
     <form action="/login" method="post">
-        <?php 
-            if(isset($_SESSION['id'])) {
-                // echo "Connected as " . $_SESSION['name'];
-            }
-        ?>
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
+        
+        <?php if ($message != null) {
+            echo '<p class="error">' . $message . '</p>';
+        } ?>
+
         <h1>Login</h1>
         <hr>
         <input type="email" name="email" id="email" placeholder="will@gmail.com" require>
@@ -57,4 +70,5 @@
         <p>Not register yet ? register now <a href="/register">here</a></p>
     </form>
 </body>
+
 </html>
