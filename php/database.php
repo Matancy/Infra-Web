@@ -2,6 +2,7 @@
     session_start(); // Start session
     $servername = "localhost"; // Adress Bdd
     $user = "root"; // userName Bdd
+    $pass = ""; // password Bdd
     $pass = "ZM6&vk53WG&Zft"; // Password Bdd 
     $dbname = "nasa"; // Nom de la Bdd
     try {
