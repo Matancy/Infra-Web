@@ -230,3 +230,70 @@ main#confirmation button {
     background: rgb(9,210,79);
     background: linear-gradient(21deg, rgba(9,210,79,1) 0%, rgba(0,151,255,1) 100%); 
 }
+
+
+
+
+/**
+    Page area51
+*/
+
+.entree{
+    margin-top: 80px;
+    background-image: url('../assets/img/panneau_zone_51.jpg'); /* picture of the area 51 */
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.dossier{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenu_dossier{
+    margin-bottom: 10em;
+    display: flex;
+    width: 70%;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 1);
+    border-radius: 32px;
+    padding: 1em;
+    color: rgb(255, 255, 255);
+    border: white double 4px;
+    font-size: 1.5em;
+}
+
+.entree header{
+    height: 90vh;
+    text-align: center;
+    padding-top: 20vh;
+    margin: 0;
+}
+
+.entree header .attention{
+    font-size: 2.5em;
+    padding: 1%;
+    color: red;
+    background-color: #fcd217;
+    border-radius: 5px;
+    border-color: red;
+    width: 35%;
+    margin:0 auto;
+    border: red solid 5px;
+}
+
+.entree header .degrade{
+    height : 65%;
+    background: linear-gradient(0deg, rgba(66,66,66,1)50%, rgba(66,66,66,0) 70.71%);
+}
+
+
+.entree header .attention h5{
+    font-size: 1em;
+}
+
+.entree main{
+    background-color: rgb(66, 66, 66);
+}
