@@ -9,7 +9,7 @@
             } else {
                 echo '<li class="right"><a href="/register">Register</a></li>';
                 echo '<li class="right"><a href="/login">Login</a></li>';
-                echo '<li class="right"><a href="/admin">Admin</a></li>';
+                echo '<li class="right"><a href="/administration">Admin</a></li>';
             }
         ?>
     </ul>

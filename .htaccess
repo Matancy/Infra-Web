@@ -37,9 +37,9 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 #--------------------------------------------------
 # Redirection de la page articles
 #--------------------------------------------------
-RewriteRule ^ubsubscribe/([a-zA-Z0-9_-]+).php /account/ubsubscribe.php?email=$1 [L]
+RewriteRule ^unsubscribe/([a-zA-Z0-9_-]+).php /account/ubsubscribe.php?email=$1 [L]
 RewriteRule ^login.php /account/login.php [L]
 RewriteRule ^register.php /account/register.php [L]
 RewriteRule ^logout.php /account/logout.php [L]
 RewriteRule ^confirmation/([a-zA-Z0-9_-]+).php /account/confirmation.php?token=$1 [L]
-
+RewriteRule ^administration.php /admin/index.php [L]
