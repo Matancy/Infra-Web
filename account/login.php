@@ -60,7 +60,7 @@ if (isset($_POST['submit'])) {
 </head>
 
 <body>
-    <?php include('php/navBar.php') ?>
+    <?php include('../php/navBar.php') ?>
     <form action="/login" method="post">
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
 

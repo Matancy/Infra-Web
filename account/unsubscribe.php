@@ -26,7 +26,7 @@ if (isset($_GET['email'])) {
 </head>
 
 <body>
-    <?php include('php/navBar.php') ?>
+    <?php include('../php/navBar.php') ?>
     <main id="confirmation">
         <h1><?php echo $message; ?></h1>
         <a href="/"><button class="login">Home 🌎</button></a>

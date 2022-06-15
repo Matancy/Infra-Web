@@ -67,7 +67,7 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['passwor
 </head>
 
 <body>
-    <?php include('php/navBar.php') ?>
+    <?php include('../php/navBar.php') ?>
     <form action="/register" method="post">
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
 
