@@ -53,11 +53,11 @@ if (isset($_POST['send-message'])) {
 
     <form method="post" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <div style="padding: 1rem;">
-            <label for="object">Message object :</label>
+            <label for="object">Message object :</label><br>
             <input type="text" name="object" id="object" required>
         </div>
         <div style="padding: 1rem;">
-            <label for="message">Message content :</label>
+            <label for="message">Message content :</label><br>
             <textarea name="message" id="message" cols="30" rows="10" required></textarea>
         </div>
         <div style="padding: 1rem;">
