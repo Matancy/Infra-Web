@@ -1,17 +1,3 @@
-<<<<<<< Updated upstream
-<?php 
-    require './php/database.php';
-
-    $page_private = true;
-    $affiche_page = true;
-    
-    if($page_private == true) {
-        if(isset($_SESSION['id'])) {
-            $affiche_page = true;
-        } else {
-            $affiche_page = false;
-        }
-=======
 <?php
 include("php/database.php");
 
@@ -19,11 +5,10 @@ $page_private = true;
 $affiche_page = true;
 
 if ($page_private == true) {
-    if (isset($_SESSION['id'])) {
+    if (isset($_SESSION['user'])) {
         $affiche_page = true;
     } else {
         $affiche_page = false;
->>>>>>> Stashed changes
     }
 }
 ?>
