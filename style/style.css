@@ -286,7 +286,6 @@ main#confirmation button {
 }
 
 .entree header .degrade{
-    margin-top: 10%;
     height : 65%;
     background: linear-gradient(0deg, rgba(66,66,66,1)50%, rgba(66,66,66,0) 70.71%);
 }
