@@ -3,7 +3,7 @@
     $servername = "localhost"; // Adress Bdd
     $user = "root"; // userName Bdd
     $pass = ""; // password Bdd
-    $pass = "ZM6&vk53WG&Zft"; // Password Bdd 
+    //$pass = "ZM6&vk53WG&Zft"; // Password Bdd 
     $dbname = "nasa"; // Nom de la Bdd
     try {
         $bdd = new PDO("mysql:host=$servername;dbname=$dbname; charset=utf8", $user, $pass);
