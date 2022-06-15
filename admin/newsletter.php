@@ -3,24 +3,26 @@
 require '../php/database.php';
 require "Mail.php";
 
-$message = null;
+$messageContent = null;
 if (isset($_POST['send-message'])) {
 
-    Mail::sendMail("sae@cpmtech.fr", "matheo.tichy@gmail.com", "sae@cpmtech.fr", "SAE", "test", "message de test");
+    if (!empty($_POST['object']) and !empty($_POST['message'])) {
+        $messageContent = 'Please fill all the fields.';
+    }
+    if ($messageContent != null) {
 
-    // if (!empty($_POST['object']) and !empty($_POST['message'])) {
-    //     $message = 'Please fill all the fields.';
-    // }
-    // if ($message != null) {
+        try {
+            $req = $bdd->prepare('SELECT email FROM newsletter WHERE inscription = 1');
+            $req->execute();
+            $emails = $req->fetchAll();
 
-    //     try {
-    //         // $req = $bdd->prepare('UPDATE counters SET value = 0 WHERE id = 1');
-    //         // $req->execute();
-    //         // $message = 'Le compteur a été réinitialisé.';
-    //     } catch (PDOException $e) {
-    //         die($e->getMessage());
-    //     }
-    // }
+            foreach ($emails as $email) {
+                Mail::sendMail("sae@cpmtech.fr", $email['email'], "sae@cpmtech.fr", "SAE Réseau", htmlspecialchars($_POST['object']), htmlspecialchars($_POST['message']));
+            }
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+    }
 }
 ?>
 
@@ -40,7 +42,7 @@ if (isset($_POST['send-message'])) {
     <h1>Send newsletter message</h1>
 
     <?php if ($message != null) {
-        echo "<h3>$message</h3>";
+        echo "<h3>$messageContent</h3>";
     } ?>
 
     <form method="post" style="display: flex; justify-content: center;">
