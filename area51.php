@@ -23,7 +23,6 @@ if ($page_private == true) {
     <link rel="shortcut icon" href="assets/ico/nasa-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style/charte-graphique.css">
     <link rel="stylesheet" href="style/style.css">
-    <link rel="stylesheet" href="style/area51.css">
 
 </head>
 
