@@ -1,8 +1,10 @@
 <?php
 
-require '../vendor/composer/phpmailer/phpmailer/src/PHPMailer.php';
-require '../vendor/composer/phpmailer/phpmailer/src/SMTP.php';
+require '../vendor/phpmailer/phpmailer/src/PHPMailer.php';
+require '../vendor/phpmailer/phpmailer/src/SMTP.php';
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
 
 class Mail
 {
@@ -21,9 +23,6 @@ class Mail
         try {
             // Create an instance; passing `true` enables exceptions
             $mail = new PHPMailer(true);
-
-            // Get Email config
-            $mailConfig = Config::getEmailConfig();
 
             // Server settings
             $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
