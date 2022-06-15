@@ -29,7 +29,7 @@ if (isset($_POST['reset-counter'])) {
 
 <body class="background-admin">
     <header>
-        <?php include('php/navBar.php') ?>
+        <?php include('../php/navBar.php') ?>
     </header>
     <h1>Counter settings</h1>
 
