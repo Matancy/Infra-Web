@@ -71,7 +71,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasa - Login</title>
+    <title>Nasa - Error page</title>
     <link rel="shortcut icon" href="assets/ico/nasa-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style/login.css">
     <link rel="stylesheet" href="style/charte-graphique.css">
@@ -119,7 +119,7 @@
         <h1>Error <?php echo $error; ?></h1>
         <p><?php echo $message; ?></p>
         <i class="fa-solid fa-bug"></i><br>
-        <a href="index.php"><button>Back To Earth 🌎</button></a>
+        <a href="index"><button>Back To Earth 🌎</button></a>
     </div>
     <?php include('php/navBar.php') ?>
     
