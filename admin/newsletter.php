@@ -7,7 +7,7 @@ $messageContent = null;
 
 if (isset($_POST['send-message'])) {
 
-    if (!empty($_POST['object']) and !empty($_POST['message'])) {
+    if (empty($_POST['object']) and empty($_POST['message'])) {
 
         $messageContent = 'Please fill all the fields.';
     } else
@@ -51,16 +51,16 @@ if (isset($_POST['send-message'])) {
         echo "<h3>$messageContent</h3>";
     } ?>
 
-    <form method="post" style="display: flex; flex-direction: column; justify-content: center;">
-        <div>
+    <form method="post" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <div style="padding: 1rem;">
             <label for="object">Message object :</label>
             <input type="text" name="object" id="object" required>
         </div>
-        <div>
+        <div style="padding: 1rem;">
             <label for="message">Message content :</label>
             <textarea name="message" id="message" cols="30" rows="10" required></textarea>
         </div>
-        <div>
+        <div style="padding: 1rem;">
             <input type="submit" class="btn" name="send-message" value="Send message">
         </div>
     </form>
