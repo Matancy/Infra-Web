@@ -1,5 +1,4 @@
 <?php 
-    //session_start(); // Start session
     include 'php/database.php'; // Include database connection
 
     if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['name']) && !empty($_POST['password2'])) {
@@ -22,8 +21,17 @@
                 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                 // Gate the date of creation
                 $dateNow = date('Y-m-d H:i:s');
+
+                //Generate a random string.
+                $token = openssl_random_pseudo_bytes(56);
+
+                //Convert the binary data into hexadecimal representation.
+                $token = bin2hex($token);
+
+                //Print it out for example purposes.
+                echo $token;
                 // Request to insert user
-                $sql = "INSERT INTO users (email, password, name, created_at, verified) VALUES ('$email', '$passwordHash', '$name', '$dateNow', 0)";
+                $sql = "INSERT INTO users (`name`, `email`, `password`, `created_at`, `verified`, `token`) VALUES ('$name', '$email', '$passwordHash', '$dateNow', 0, '$token')";
                 $result = $bdd->prepare($sql);
                 $result->execute();
                 echo "<script>alert('Account created, You need to verifie your account now');</script>";
@@ -43,9 +51,11 @@
     <title>Nasa - Register</title>
     <link rel="shortcut icon" href="assets/ico/nasa-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/charte-graphique.css">
     <script src="https://kit.fontawesome.com/d50a18be62.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <?php include('php/navBar.php') ?>
     <form action="register.php" method="post">
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
         <h1>Register</h1>
