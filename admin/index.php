@@ -15,11 +15,11 @@
         <?php include('../php/navBar.php') ?>
     </header>
     <div class="admin-hub">
-        <a class="admin-hub-icon" href="counter.php">
+        <a class="admin-hub-icon" href="counter">
             <img src="../assets/ico/counter.png" alt="Icône de compteur">
             <h3>Réglage du compteur</h3>
         </a>
-        <a class="admin-hub-icon" href="newsletter.php">
+        <a class="admin-hub-icon" href="newsletter">
             <img src="../assets/ico/mail.png" alt="Icône de mail">
             <h3>Newsletter</h3>
         </a>
