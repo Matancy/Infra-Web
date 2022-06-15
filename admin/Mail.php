@@ -6,6 +6,7 @@ require '../vendor/phpmailer/phpmailer/src/SMTP.php';
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
+
 class Mail
 {
     /**
@@ -20,6 +21,7 @@ class Mail
      */
     public static function sendMail($from, $destination, $replyToEmail, $replyToName, $subject, $message)
     {
+        $config = require '../config/config.php';
         try {
             // Create an instance; passing `true` enables exceptions
             $mail = new PHPMailer(true);
@@ -31,7 +33,7 @@ class Mail
             $mail->Host       = "mail.infomaniak.com";               // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
             $mail->Username   = "sae@cpmtech.fr";           // SMTP username
-            $mail->Password   = "Y^dvdqzSMCt8U3";           // SMTP password
+            $mail->Password   = $config['pass'];           // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            // Enable implicit TLS encryption
             $mail->Port       = 587;               // TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
