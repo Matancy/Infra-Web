@@ -34,9 +34,10 @@
     <h1>Do not leak this informations</h1>
     <?php 
         include('php/distance.php');
-        //get client gps location
+        //get client ip
+        $ip = $_SERVER['REMOTE_ADDR'];
 
-        $new_arr[]= unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=45.147.98.172'));
+        $new_arr[]= unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip='.$ip));
         //echo "<h4 style=\"color : white\">Latitude:".$new_arr[0]['geoplugin_latitude']." and Longitude:".$new_arr[0]['geoplugin_longitude'].'</h4>';        
         echo '<h4 style="color : red">Distance: ' . distance($new_arr[0]['geoplugin_latitude'], $new_arr[0]['geoplugin_longitude'], $_SERVER['REMOTE_ADDR'], $_SERVER['REMOTE_ADDR']) . ' km</h4>';
     ?>
