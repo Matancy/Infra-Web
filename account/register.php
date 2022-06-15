@@ -1,6 +1,7 @@
 <?php
 
 require '../php/database.php'; // Include database connection
+require '../admin/Mail.php'; // Include mail class
 
 $message = null;
 
@@ -43,6 +44,10 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['passwor
             // Request to insert user
             $result = $bdd->prepare("INSERT INTO users (`name`, `email`, `password`, `created_at`, `verified`, `token`) VALUES (?, ?, ?, ?, 0, ?);");
             $result->execute([$name, $email, $passwordHash, $dateNow, $token]);
+
+            Mail::sendMail("saereseau@cpmtech.fr", $email, "saereseau@cpmtech.fr", "SAE Réseau", "Veuillez valider votre compte", 
+            "Merci de valider votre compte avec le lien suivant : <br/> <a href='http://www.saereseau.cpmtech.fr/confirmation/$token'>Cliquez ici</a>");
+
             $message = "Account created, please verify your email";
             header('Location: /login');
             exit();
