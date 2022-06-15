@@ -1,1 +1,50 @@
-ErrorDocument 404 /404.php
+
+#--------------------------------------------------
+# Interdire de lister les dossiers
+#--------------------------------------------------
+Options -MultiViews -Indexes
+
+#--------------------------------------------------
+# Interdire de lister les dossiers
+#--------------------------------------------------
+Options -MultiViews -Indexes
+
+#--------------------------------------------------
+# On défini l'encodage par défaut
+#--------------------------------------------------
+AddDefaultCharset utf-8
+
+#--------------------------------------------------
+# Redirection des pages d'erreur
+#--------------------------------------------------
+ErrorDocument 400 /error.php?err=400
+ErrorDocument 401 /error.php?err=401
+ErrorDocument 403 /error.php?err=403
+ErrorDocument 404 /error.php?err=404
+ErrorDocument 500 /error.php?err=500
+
+#--------------------------------------------------
+# Activation du module de réecriture
+#--------------------------------------------------
+RewriteEngine on
+
+#--------------------------------------------------
+# Le serveur doit suivre les liens symboliques
+#--------------------------------------------------
+Options +FollowSymlinks
+
+#--------------------------------------------------
+# Suppression des extensions html et php
+#--------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+#--------------------------------------------------
+# Redirection de la page articles
+#--------------------------------------------------
+RewriteRule ^ubsubscribe/([a-zA-Z0-9_-]+).php /admin/ubsubscribe.php?email=$1 [L]
+RewriteRule ^login.php /account/login.php [L]
+RewriteRule ^register.php /account/register.php [L]
+RewriteRule ^confirmation/([a-zA-Z0-9_-]+).php /account/confirmation.php?token=$1 [L]
+
