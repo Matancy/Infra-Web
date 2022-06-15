@@ -1,5 +1,5 @@
 <?php 
-    include 'php/database.php'; // Include database connection
+    require './php/database.php'; // Include database connection
 
     $error = ""; // Initialize error variable
     $message = "No error"; // Initialize message variable

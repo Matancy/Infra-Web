@@ -1,5 +1,5 @@
 <?php 
-    include("php/database.php");
+    require './php/database.php';
 
     $page_private = true;
     $affiche_page = true;

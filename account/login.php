@@ -1,5 +1,5 @@
 <?php
-include 'php/database.php'; // Include database connection
+require '../php/database.php'; // Include database connection
 
 $message = null;
 
