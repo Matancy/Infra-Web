@@ -51,7 +51,7 @@
             <div class="error">
                 <h1 id="notLogged">You are not logged in</h1>
                 <h3>If you want to see this page, please login</h3>
-                <a href="Login.php"><button class="login">Login 🌎</button></a>
+                <a href="login.php"><button class="login">Login 🌎</button></a>
             </div>
             ';
         }

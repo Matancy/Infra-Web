@@ -19,6 +19,7 @@
                 $_SESSION['email'] = $data[0]['email'];
                 $_SESSION['name'] = $data[0]['name'];
                 $_SESSION['created_at'] = $data[0]['created_at'];
+                header('Location: area51.php');
             } else {
                 // Password incorrects
                 // echo "<script>alert('Mot de passe incorrect');</script>";
