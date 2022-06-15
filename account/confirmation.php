@@ -9,11 +9,11 @@ if (isset($_GET["token"])) {
 
     $result = $bdd->prepare("SELECT * FROM users WHERE token = ?;");
 
-    $result->execute([$token, $id]);
+    $result->execute([$token]);
 
     if ($result->rowCount() > 0) {
         $result = $bdd->prepare("UPDATE users SET verified = 1, token = -1 WHERE token = ?;");
-        $result->execute([$token, $id]);
+        $result->execute([$token]);
 
         $statusProcedure = "Account verified";
         header('Location: /login');

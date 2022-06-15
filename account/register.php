@@ -46,7 +46,7 @@ if (isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['passwor
             $result->execute([$name, $email, $passwordHash, $dateNow, $token]);
 
             Mail::sendMail("saereseau@cpmtech.fr", $email, "saereseau@cpmtech.fr", "SAE Réseau", "Veuillez valider votre compte", 
-            "Merci de valider votre compte avec le lien suivant : <br/> <a href='https://www.saereseau.cpmtech.fr/confirmation/$token'>Cliquez ici</a>");
+            "Merci de valider votre compte avec le lien suivant : <br/> <a href='http://www.saereseau.cpmtech.fr/confirmation/$token'>Cliquez ici</a>");
 
             $message = "Account created, please verify your email";
             header('Location: /login');
