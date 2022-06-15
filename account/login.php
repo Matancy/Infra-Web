@@ -26,16 +26,22 @@ if (isset($_POST['submit'])) {
         $data = $result->fetch();
         if (password_verify($password, $data["password"])) {
 
-            $_SESSION['user'] = $data;
-            header('Location: /area51');
-            exit();
+            if ($data["verified"] == 0) {
+
+                $message = "Please verify your account";
+            } else {
+
+                $_SESSION['user'] = $data;
+                header('Location: /area51');
+                exit();
+            }
         } else {
             // Password incorrects
-            $message = "Mot de passe incorrect";
+            $message = "Password incorrect";
         }
     } else {
         // User not found
-        $message = "Utilisateur non trouvé";
+        $message = "User not founded";
     }
 }
 ?>
@@ -57,7 +63,7 @@ if (isset($_POST['submit'])) {
     <?php include('php/navBar.php') ?>
     <form action="/login" method="post">
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
-        
+
         <?php if ($message != null) {
             echo '<p class="error">' . $message . '</p>';
         } ?>
