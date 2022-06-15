@@ -186,6 +186,10 @@ footer a{
     padding: 4rem;
     text-align: center;
 }
+.background-admin h3 {
+    padding: 3rem;
+    text-align: center;
+}
 .background-admin a {
     color: white;
 }
