@@ -20,6 +20,7 @@ if (isset($_POST['send-message'])) {
         }
         if (!empty($emails)) {
             foreach ($emails as $email) {
+                $emailMessage = $_POST['message'] . "\n\n <a href='https://www.saereseau.cpmtech.fr/unsubscribe.php?email=" . $email['email'] . "'>Unsubscribe</a>";
                 Mail::sendMail("saereseau@cpmtech.fr", $email['email'], "saereseau@cpmtech.fr", "SAE Réseau", htmlspecialchars($_POST['object']), htmlspecialchars($_POST['message']));
             }
             $messageContent = "Mail has been sent";
@@ -47,12 +48,18 @@ if (isset($_POST['send-message'])) {
         echo "<h3>$messageContent</h3>";
     } ?>
 
-    <form method="post" style="display: flex; justify-content: center;">
-        <label for="object">Message object :</label>
-        <input type="text" name="object" id="object" required>
-        <label for="message">Message content :</label>
-        <textarea name="message" id="message" cols="30" rows="10" required></textarea>
-        <input type="submit" class="btn" name="send-message" value="Send message">
+    <form method="post" style="display: flex; flex-direction: column; justify-content: center;">
+        <div>
+            <label for="object">Message object :</label>
+            <input type="text" name="object" id="object" required>
+        </div>
+        <div>
+            <label for="message">Message content :</label>
+            <textarea name="message" id="message" cols="30" rows="10" required></textarea>
+        </div>
+        <div>
+            <input type="submit" class="btn" name="send-message" value="Send message">
+        </div>
     </form>
 </body>
 
