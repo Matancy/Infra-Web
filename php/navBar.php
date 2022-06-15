@@ -5,6 +5,7 @@
             if(isset($_SESSION['user']['id'])) {
                 echo '<li class="left">Hi, ' . $_SESSION['user']['name'] . '</li>';
                 echo '<li class="right"><a href="/logout">Logout</a></li>';
+                echo '<li class="right"><a href="/administration">Admin</a></li>';
                 echo '<li class="right"><a href="/area51">Area 51</a></li>';
             } else {
                 echo '<li class="right"><a href="/register">Register</a></li>';
