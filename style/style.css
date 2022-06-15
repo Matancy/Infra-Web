@@ -238,10 +238,9 @@ main#confirmation button {
 */
 
 .entree{
-    margin-top: 80px;
-    background-image: url('../assets/img/panneau_zone_51.jpg'); /* picture of the area 51 */
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-color: rgb(66, 66, 66);
+    margin: 0;
+    padding: 0;
 }
 
 .dossier{
@@ -252,7 +251,7 @@ main#confirmation button {
 }
 
 .contenu_dossier{
-    margin-bottom: 10em;
+    margin-bottom: 7em;
     display: flex;
     width: 70%;
     flex-direction: row;
@@ -265,9 +264,12 @@ main#confirmation button {
 }
 
 .entree header{
-    height: 90vh;
+    background-image: url('../assets/img/panneau_zone_51.jpg'); /* picture of the area 51 */
+    background-size: 100%;
+    background-repeat: no-repeat;
+    height: 100vh;
     text-align: center;
-    padding-top: 20vh;
+    padding-top: 25vh;
     margin: 0;
 }
 
@@ -284,6 +286,7 @@ main#confirmation button {
 }
 
 .entree header .degrade{
+    margin-top: 10%;
     height : 65%;
     background: linear-gradient(0deg, rgba(66,66,66,1)50%, rgba(66,66,66,0) 70.71%);
 }
@@ -295,4 +298,8 @@ main#confirmation button {
 
 .entree main{
     background-color: rgb(66, 66, 66);
+}
+
+.entree .texte_rubriques p{
+    text-align: justify;
 }
