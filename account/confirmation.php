@@ -43,7 +43,7 @@ if (isset($_GET["token"])) {
 
 <body>
     <header>
-        <?php include('php/navBar.php') ?>
+        <?php include('../php/navBar.php') ?>
     </header>
     <main id="confirmation">
 
