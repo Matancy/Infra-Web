@@ -36,8 +36,8 @@ if (isset($_GET["token"])) {
     <meta name="description" content="Asan, is the biggest british agency in the space sector">
     <meta name="keywords" content="Asan, space, Great Britain">
     <meta name="author" content="Jérémie Lostanlen">
-    <link rel="stylesheet" href="../style/style.css">
-    <link rel="stylesheet" href="../style/charte-graphique.css">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/charte-graphique.css">
     <title>Nasa - Confirmation</title>
 </head>
 

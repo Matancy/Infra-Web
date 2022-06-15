@@ -41,6 +41,7 @@ RewriteRule ^unsubscribe/([a-zA-Z0-9_-]+).php /account/ubsubscribe.php?email=$1 
 RewriteRule ^login.php /account/login.php [L]
 RewriteRule ^register.php /account/register.php [L]
 RewriteRule ^logout.php /account/logout.php [L]
+RewriteRule ^confirmation.php /account/confirmation.php [L]
 RewriteRule ^confirmation/([a-zA-Z0-9_-]+).php /account/confirmation.php?token=$1 [L]
 RewriteRule ^administration.php /admin/index.php [L]
 RewriteRule ^newsletter.php /admin/newsletter.php [L]
