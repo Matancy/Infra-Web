@@ -63,12 +63,12 @@
                     <img class="image_voyageur" src="assets/img/voyageur.jpg" alt="Engin spacial qui décolle" title="Photo de SpaceX, de unsplash.com">
                 </figure>
                 <article class="texte_rubriques">
-                    <h1>The voyager spacecraft left the earth from<br>
+                    <h1>The voyager spacecraft left the earth since
                         <?php
-                        $depart = "15-06-1995";
+                        $depart = "1977-09-05";
                         $aujourdhui = date("Y-m-d");
                         $diff = date_diff(date_create($depart), date_create($aujourdhui));
-                        echo '<span class="duree_voyage_voyageur1">' . $diff->format('%y') . 'years</span>';
+                        echo '<span class="duree_voyage_voyageur1">' . $diff->format('%y') . ' years</span>';
                         ?>
                     </h1>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae quis minus libero! Laborum quo, saepe culpa, asperiores voluptates at facilis voluptate iusto nostrum consequatur tenetur iure labore a fugit temporibus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, non sequi, minus, velit accusantium illum laboriosam repellendus voluptatum repellat necessitatibus commodi quasi animi? Incidunt praesentium ex ipsum tenetur! Consequatur, aperiam. lorem Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo laborum blanditiis repellat quo. Quis, eveniet. Perferendis rerum a repellendus blanditiis nihil</p>

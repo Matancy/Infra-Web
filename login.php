@@ -6,10 +6,8 @@
         $password = $_POST['password'];
         $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
-        $sql = "SELECT * FROM users WHERE email = '$email' ";
-
-        $result = $bdd->prepare($sql);
-        $result->execute();
+        $result = $bdd->prepare("SELECT * FROM users WHERE email = ?;");
+        $result->execute([$email]);
     
         if($result->rowCount() > 0) {
             $data = $result->fetchAll();

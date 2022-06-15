@@ -7,10 +7,8 @@
         $password2 = $_POST['password2'];
         $name = $_POST['name'];
         
-        $sql = "SELECT * FROM users WHERE email = '$email' ";
-        
-        $result = $bdd->prepare($sql);
-        $result->execute();
+        $result = $bdd->prepare("SELECT * FROM users WHERE email = ?;");
+        $result->execute([$email]);
         
         // Check if user already exists
         if($result->rowCount() > 0) {
@@ -31,9 +29,8 @@
                 //Print it out for example purposes.
                 echo $token;
                 // Request to insert user
-                $sql = "INSERT INTO users (`name`, `email`, `password`, `created_at`, `verified`, `token`) VALUES ('$name', '$email', '$passwordHash', '$dateNow', 0, '$token')";
-                $result = $bdd->prepare($sql);
-                $result->execute();
+                $result = $bdd->prepare("INSERT INTO users (`name`, `email`, `password`, `created_at`, `verified`, `token`) VALUES (?, ?, ?, ?, 0, ?);");
+                $result->execute([$name, $email, $passwordHash, $dateNow, $token]);
                 echo "<script>alert('Account created, You need to verifie your account now');</script>";
                 header('Location: login.php');
             } else {

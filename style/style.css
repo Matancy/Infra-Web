@@ -152,8 +152,9 @@ INTRODUCTION DE LA PAGE D ACCUEIL
 
 .duree_voyage_voyageur1{
     font-size: 50px;
-    color: red;
+    color: rgb(34, 34, 34);
     font-weight:900;
+    font-style: italic;
 }
 
 
