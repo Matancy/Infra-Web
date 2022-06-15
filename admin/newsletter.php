@@ -17,7 +17,7 @@ if (isset($_POST['send-message'])) {
             $emails = $req->fetchAll();
 
             foreach ($emails as $email) {
-                Mail::sendMail("sae@cpmtech.fr", $email['email'], "sae@cpmtech.fr", "SAE Réseau", htmlspecialchars($_POST['object']), htmlspecialchars($_POST['message']));
+                Mail::sendMail("saereseau@cpmtech.fr", $email['email'], "saereseau@cpmtech.fr", "SAE Réseau", htmlspecialchars($_POST['object']), htmlspecialchars($_POST['message']));
             }
         } catch (PDOException $e) {
             die($e->getMessage());
