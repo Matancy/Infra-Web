@@ -32,13 +32,13 @@ class Mail
             $mail->isSMTP();                                            // Send using SMTP
             $mail->Host       = "mail.infomaniak.com";               // Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-            $mail->Username   = "sae@cpmtech.fr";           // SMTP username
+            $mail->Username   = "saereseau@cpmtech.fr";           // SMTP username
             $mail->Password   = $config['pass'];           // SMTP password
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;            // Enable implicit TLS encryption
             $mail->Port       = 587;               // TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             // Recipients
-            $mail->setFrom("sae@cpmtech.fr", $from);
+            $mail->setFrom("saereseau@cpmtech.fr", $from);
             $mail->addAddress($destination);     //Add a recipient
             $mail->addReplyTo($replyToEmail, $replyToName);
 
