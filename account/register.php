@@ -53,7 +53,7 @@
 </head>
 <body>
     <?php include('php/navBar.php') ?>
-    <form action="register.php" method="post">
+    <form action="/register" method="post">
         <img src="assets/ico/nasa-logo.png" alt="Nasa Logo">
         <h1>Register</h1>
         <hr>

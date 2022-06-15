@@ -4,11 +4,11 @@
         <?php
             if(isset($_SESSION['id'])) {
                 echo '<li class="left">Hi, ' . $_SESSION['name'] . '</li>';
-                echo '<li class="right"><a href="php/logout.php">Logout</a></li>';
-                echo '<li class="right"><a href="area51.php">Area 51</a></li>';
+                echo '<li class="right"><a href="/logout">Logout</a></li>';
+                echo '<li class="right"><a href="/area51">Area 51</a></li>';
             } else {
-                echo '<li class="right"><a href="register.php">Register</a></li>';
-                echo '<li class="right"><a href="login.php">Login</a></li>';
+                echo '<li class="right"><a href="/register">Register</a></li>';
+                echo '<li class="right"><a href="/login">Login</a></li>';
             }
         ?>
     </ul>

@@ -42,7 +42,7 @@
 </head>
 <body>
     <?php include('php/navBar.php') ?>
-    <form action="login.php" method="post">
+    <form action="/login" method="post">
         <?php 
             if(isset($_SESSION['id'])) {
                 // echo "Connected as " . $_SESSION['name'];
@@ -54,7 +54,7 @@
         <input type="email" name="email" id="email" placeholder="will@gmail.com" require>
         <input type="password" name="password" id="password" placeholder="myLittlePwd" require>
         <button type="submit" name="submit">Login <i class="fa-solid fa-arrow-right-to-bracket"></i></button>
-        <p>Not register yet ? register now <a href="register.php">here</a></p>
+        <p>Not register yet ? register now <a href="/register">here</a></p>
     </form>
 </body>
 </html>

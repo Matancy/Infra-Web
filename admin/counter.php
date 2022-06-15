@@ -10,7 +10,7 @@ if (isset($_POST['reset-counter'])) {
         $req->execute();
         $message = 'Counter has been reset.';
     } catch (PDOException $e) {
-        die ($e->getMessage());
+        die($e->getMessage());
     }
 }
 ?>
@@ -28,6 +28,9 @@ if (isset($_POST['reset-counter'])) {
 </head>
 
 <body class="background-admin">
+    <header>
+        <?php include('php/navBar.php') ?>
+    </header>
     <h1>Counter settings</h1>
 
     <?php if ($message != null) {

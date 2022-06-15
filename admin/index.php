@@ -11,6 +11,9 @@
 </head>
 
 <body class="background-admin">
+    <header>
+        <?php include('php/navBar.php') ?>
+    </header>
     <div class="admin-hub">
         <a class="admin-hub-icon" href="counter.php">
             <img src="../assets/ico/counter.png" alt="Icône de compteur">

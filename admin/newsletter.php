@@ -42,6 +42,9 @@ if (isset($_POST['send-message'])) {
 </head>
 
 <body class="background-admin">
+    <header>
+        <?php include('php/navBar.php') ?>
+    </header>
     <h1>Send newsletter message</h1>
 
     <?php if ($messageContent != null) {
