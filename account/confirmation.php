@@ -1,16 +1,18 @@
 <?php
+
 include('php/database.php');
-if (isset($_GET["token"]) && isset($_SESSION["id"])) {
+
+if (isset($_GET["token"])) {
 
     $token = htmlspecialchars($_GET["token"]);
-    $id = htmlspecialchars($_SESSION["id"]);
-
     $statusProcedure = "Account not verified";
 
-    $result = $bdd->prepare("SELECT * FROM users WHERE token = ? AND id = ?;");
+    $result = $bdd->prepare("SELECT * FROM users WHERE token = ?;");
+
     $result->execute([$token, $id]);
+
     if ($result->rowCount() > 0) {
-        $result = $bdd->prepare("UPDATE users SET verified = 1, token = -1 WHERE token = ? AND id = ?;");
+        $result = $bdd->prepare("UPDATE users SET verified = 1, token = -1 WHERE token = ?;");
         $result->execute([$token, $id]);
 
         $statusProcedure = "Account verified";
@@ -48,7 +50,7 @@ if (isset($_GET["token"]) && isset($_SESSION["id"])) {
         <h1><?php echo $statusProcedure; ?></h1>
         <br>
         <a href="index.php"><button>Back To Home</button></a>
-        
+
     </main>
     <footer>
         <p>ASAN - 2022 - <a href="">Legal notice</a></p>
