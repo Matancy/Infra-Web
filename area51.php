@@ -44,7 +44,7 @@ if ($page_private == true) {
                 //get client ip
                 $ip = $_SERVER['REMOTE_ADDR'];
                 $new_arr[] = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $ip));
-                echo '<h5">Distance from area 51: ' . round(distance($new_arr[0]['geoplugin_latitude'], $new_arr[0]['geoplugin_longitude'], $_SERVER['REMOTE_ADDR'], $_SERVER['REMOTE_ADDR']), 2, PHP_ROUND_HALF_UP) . ' milles</h4>';
+                echo '<h5">Distance from area 51: ' . round(distance($new_arr[0]['geoplugin_latitude'], $new_arr[0]['geoplugin_longitude'], $_SERVER['REMOTE_ADDR'], $_SERVER['REMOTE_ADDR']), 2, PHP_ROUND_HALF_UP) . ' miles</h4>';
                 ?>
             </div>
 
@@ -56,13 +56,12 @@ if ($page_private == true) {
 
                 <div class="contenu_dossier">
                     <figure class="conteneur_image_rubrique">
-                        <img class="image_histoire" src="assets/img/articleRosewell.jpg" alt="" title="article of the Roswell incident">
+                        <img class="image_histoire" src="assets/img/alien.jpg" alt="" title="article of the Roswell incident">
                     </figure>
                     <article class="texte_rubriques">
-                        <h1>Roswell leaks</h1>
-                        <p>On July 8, 1947, during our alien capture mission, we probably left behind some evidence of our actions. It was found the next day by a farmer and published in several newspapers. <br>We did our best to cover it up. </p>
+                        <h1>Extraterrestrial and UFO</h1>
+                        <p>June 5, 1946 5:52 am, we make the first contact between humans and an ET. He seems to have a humanoid appearance and his flying saucer must have a technology that is unknown to us. It landed near a cliff west of the Area 51 military base.<br>So we decided to make this base a place dedicated to alien research.</p>
                     </article>
-
                 </div>
             </div>
 
@@ -70,20 +69,22 @@ if ($page_private == true) {
 
                 <div class="contenu_dossier">
                     <figure class="conteneur_image_rubrique">
-                        <img class="image_histoire" src="assets/img/alien.jpg" alt="" title="article of the Roswell incident">
+                        <img class="image_histoire" src="assets/img/articleRosewell.jpg" alt="" title="article of the Roswell incident">
                     </figure>
                     <article class="texte_rubriques">
                         <h1>Roswell leaks</h1>
-                        <p>On July 8, 1947, during our alien capture mission, we probably left behind some evidence of our actions. It was found the next day by a farmer and published in several newspapers. <br>We did our best to cover it up. </p>
+                        <p>On July 8, 1947, during our alien capture mission, we probably left behind some evidence of our actions. It was found the next day by a farmer and published in several newspapers. <br>We did our best to hush up the deal. </p>
                     </article>
 
                 </div>
             </div>
 
 
-
         </main>
 
+        <footer>
+            <p>NASA - 2022 - <a href="">Legal notice</a></p>
+        </footer>
 
     <?php
     } else {
