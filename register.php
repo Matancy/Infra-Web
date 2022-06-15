@@ -1,5 +1,4 @@
 <?php 
-    //session_start(); // Start session
     include 'php/database.php'; // Include database connection
 
     if(isset($_POST['submit']) && !empty($_POST['email']) && !empty($_POST['password']) && !empty($_POST['name']) && !empty($_POST['password2'])) {
@@ -8,10 +7,8 @@
         $password2 = $_POST['password2'];
         $name = $_POST['name'];
         
-        $sql = "SELECT * FROM users WHERE email = '$email' ";
-        
-        $result = $bdd->prepare($sql);
-        $result->execute();
+        $result = $bdd->prepare("SELECT * FROM users WHERE email = ?;");
+        $result->execute([$email]);
         
         // Check if user already exists
         if($result->rowCount() > 0) {
@@ -22,10 +19,18 @@
                 $passwordHash = password_hash($password, PASSWORD_DEFAULT);
                 // Gate the date of creation
                 $dateNow = date('Y-m-d H:i:s');
+
+                //Generate a random string.
+                $token = openssl_random_pseudo_bytes(56);
+
+                //Convert the binary data into hexadecimal representation.
+                $token = bin2hex($token);
+
+                //Print it out for example purposes.
+                echo $token;
                 // Request to insert user
-                $sql = "INSERT INTO users (email, password, name, created_at, verified) VALUES ('$email', '$passwordHash', '$name', '$dateNow', 0)";
-                $result = $bdd->prepare($sql);
-                $result->execute();
+                $result = $bdd->prepare("INSERT INTO users (`name`, `email`, `password`, `created_at`, `verified`, `token`) VALUES (?, ?, ?, ?, 0, ?);");
+                $result->execute([$name, $email, $passwordHash, $dateNow, $token]);
                 echo "<script>alert('Account created, You need to verifie your account now');</script>";
                 header('Location: login.php');
             } else {

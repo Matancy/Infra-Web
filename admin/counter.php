@@ -1,7 +1,17 @@
 <?php
+
+require '../php/database.php';
+
 $message = null;
 if (isset($_POST['reset-counter'])) {
-    $message = 'Le compteur a été réinitialisé.';
+
+    try {
+        $req = $bdd->prepare('UPDATE counters SET value = 0 WHERE id = 1');
+        $req->execute();
+        $message = 'Le compteur a été réinitialisé.';
+    } catch (PDOException $e) {
+        die ($e->getMessage());
+    }
 }
 ?>
 
@@ -24,8 +34,8 @@ if (isset($_POST['reset-counter'])) {
         echo "<h3>$message</h3>";
     } ?>
 
-    <form action="post" style="display: flex; justify-content: center;">
-        <input type="button" class="btn" name="reset-counter" value="Réinitialiser le compteur">
+    <form method="post" style="display: flex; justify-content: center;">
+        <input type="submit" class="btn" name="reset-counter" value="Réinitialiser le compteur">
     </form>
 </body>
 
