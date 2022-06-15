@@ -119,7 +119,7 @@
         <h1>Error <?php echo $error; ?></h1>
         <p><?php echo $message; ?></p>
         <i class="fa-solid fa-bug"></i><br>
-        <a href="index"><button>Back To Earth 🌎</button></a>
+        <a href="/"><button>Back To Earth 🌎</button></a>
     </div>
     <?php include('php/navBar.php') ?>
     
