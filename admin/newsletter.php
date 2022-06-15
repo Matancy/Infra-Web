@@ -41,7 +41,7 @@ if (isset($_POST['send-message'])) {
 <body class="background-admin">
     <h1>Send newsletter message</h1>
 
-    <?php if ($message != null) {
+    <?php if ($messageContent != null) {
         echo "<h3>$messageContent</h3>";
     } ?>
 
