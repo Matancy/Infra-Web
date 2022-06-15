@@ -4,12 +4,13 @@ require '../php/database.php';
 require "Mail.php";
 
 $messageContent = null;
+
 if (isset($_POST['send-message'])) {
 
     if (!empty($_POST['object']) and !empty($_POST['message'])) {
+
         $messageContent = 'Please fill all the fields.';
-    }
-    if ($messageContent != null) {
+    } else
 
         try {
             $req = $bdd->prepare('SELECT email FROM newsletter WHERE inscription = 1');
@@ -18,13 +19,12 @@ if (isset($_POST['send-message'])) {
         } catch (PDOException $e) {
             die($e->getMessage());
         }
-        if (!empty($emails)) {
-            foreach ($emails as $email) {
-                $emailMessage = $_POST['message'] . "\n\n <a href='https://www.saereseau.cpmtech.fr/unsubscribe.php?email=" . $email['email'] . "'>Unsubscribe</a>";
-                Mail::sendMail("saereseau@cpmtech.fr", $email['email'], "saereseau@cpmtech.fr", "SAE Réseau", htmlspecialchars($_POST['object']), htmlspecialchars($_POST['message']));
-            }
-            $messageContent = "Mail has been sent";
+    if (!empty($emails)) {
+        foreach ($emails as $email) {
+            $emailMessage = $_POST['message'] . "\n\n <a href='https://www.saereseau.cpmtech.fr/unsubscribe/" . $email['email'] . "'>Unsubscribe</a>";
+            Mail::sendMail("saereseau@cpmtech.fr", $email['email'], "saereseau@cpmtech.fr", "SAE Réseau", htmlspecialchars($_POST['object']), htmlspecialchars($_POST['message']));
         }
+        $messageContent = "Mail has been sent";
     }
 }
 ?>
@@ -43,7 +43,7 @@ if (isset($_POST['send-message'])) {
 
 <body class="background-admin">
     <header>
-        <?php include('php/navBar.php') ?>
+        <?php include('../php/navBar.php') ?>
     </header>
     <h1>Send newsletter message</h1>
 
