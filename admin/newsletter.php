@@ -15,12 +15,14 @@ if (isset($_POST['send-message'])) {
             $req = $bdd->prepare('SELECT email FROM newsletter WHERE inscription = 1');
             $req->execute();
             $emails = $req->fetchAll();
-
+        } catch (PDOException $e) {
+            die($e->getMessage());
+        }
+        if (!empty($emails)) {
             foreach ($emails as $email) {
                 Mail::sendMail("saereseau@cpmtech.fr", $email['email'], "saereseau@cpmtech.fr", "SAE Réseau", htmlspecialchars($_POST['object']), htmlspecialchars($_POST['message']));
             }
-        } catch (PDOException $e) {
-            die($e->getMessage());
+            $messageContent = "Mail has been sent";
         }
     }
 }
