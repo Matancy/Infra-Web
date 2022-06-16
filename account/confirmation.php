@@ -53,7 +53,7 @@ if (isset($_GET["token"])) {
 
     </main>
     <footer>
-        <p>ASAN - 2022 - <a href="">Legal notice</a></p>
+        <p>NASA - 2022 - <a href="">Legal notice</a></p>
     </footer>
 </body>
 
