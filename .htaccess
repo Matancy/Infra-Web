@@ -37,7 +37,7 @@ RewriteRule ^([^\.]+)$ $1.html [NC,L]
 #--------------------------------------------------
 # Redirection de la page articles
 #--------------------------------------------------
-RewriteRule ^unsubscribe/([^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+).php /account/unsubscribe.php?email=$1 [L]
+RewriteRule ^unsubscribe/([^/]*).php?email=$1 [L]
 RewriteRule ^login.php /account/login.php [L]
 RewriteRule ^register.php /account/register.php [L]
 RewriteRule ^logout.php /account/logout.php [L]
