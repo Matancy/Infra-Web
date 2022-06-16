@@ -21,7 +21,7 @@ if (isset($_POST['send-message'])) {
         }
     if (!empty($emails)) {
         foreach ($emails as $email) {
-            $emailMessage = $_POST['message'] . "\n\n Se désinscrire : http://www.saereseau.cpmtech.fr/unsubscribe/" . $email['email'];
+            $emailMessage = $_POST['message'] . "\n\n Se désinscrire : http://www.saereseau.cpmtech.fr//account/unsubscribe.php?email=" . $email['email'];
             Mail::sendMail("saereseau@cpmtech.fr", $email['email'], "saereseau@cpmtech.fr", "SAE Réseau", htmlspecialchars($_POST['object']), htmlspecialchars($emailMessage));
         }
         $messageContent = "Mail has been sent";
